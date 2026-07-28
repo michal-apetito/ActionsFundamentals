@@ -1,4 +1,4 @@
-pull_request
+pull_request v3
 
 # GitHub Actions Fundamentals
 

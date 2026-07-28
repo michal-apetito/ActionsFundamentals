@@ -1,4 +1,4 @@
-triggers build (push)
+[skip ci]
 
 # GitHub Actions Fundamentals
 

@@ -1,0 +1,25 @@
+name: Morning Bell Action CI
+
+on:
+  push:
+    branches: [main]
+    paths: [hello-world-docker-action/**]
+  workflow_dispatch:
+
+jobs:
+  test-action:
+    name: Ring the bell
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3.3.0
+
+      - name: Send a personalized greeting
+        id: morning-bell
+        uses: ./hello-world-docker-action
+        with:
+          who-to-greet: '@michal-apetito'
+
+      - name: Confirm the returned time
+        run: |
+          echo "Greeting delivered at ${{ steps.morning-bell.outputs.time }} UTC."

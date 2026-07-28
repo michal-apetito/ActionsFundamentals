@@ -1,0 +1,23 @@
+name: 'Morning Bell Greeting'
+description: 'Ring in a friendly greeting and report exactly when it happened.'
+author: 'michal-apetito'
+
+inputs:
+  who-to-greet:
+    description: 'The person, team, or handle to greet'
+    required: true
+    default: 'world'
+
+outputs:
+  time:
+    description: 'The UTC time when the greeting was delivered'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+
+branding:
+  icon: 'sunrise'
+  color: 'yellow'

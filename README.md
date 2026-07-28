@@ -1,4 +1,4 @@
-[skip ci]
+pull_request
 
 # GitHub Actions Fundamentals
 
